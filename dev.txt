@@ -1,0 +1,145 @@
+
+
+$ git init
+
+$ git status
+
+$ git add .
+$ git status
+$ git config --global --list
+  git config --global --unset user.name "gagan"
+  git config --global --unset user.email "gagan@mail"
+  git config --global user.name "yash"
+  git config --global user.email "yash@gmail.com"
+
+
+$ git commit -m "hello"
+$ git log
+$ git reset --hard bdd6fb7c
+$ git remote -v
+$ git remote add origin https://github.com/Yashwantha-TH/DevopsLab.git
+
+$ git checkout
+
+$ git push -u origin master
+
+$ git pull origin  https://github.com/Yashwantha-TH/DevopsLab.git
+
+
+$ git pull origin master
+$ git clone https://github.com/Yashwantha-TH/DevopsLab.git
+
+
+
+
+
+$ git add main.c
+
+$ git commit -m "v1"
+
+$ git log
+$ git push origin master
+$ git checkout -b "v2"
+$ git add main.c
+
+$ git commit -m "v2"
+$ git checkout master
+git merge v2 -m "v2 -->master"
+$ git push origin master
+$ git checkout -b "v3"
+$ git add main.c
+
+$ git commit -m "v3"
+$ git checkout master
+$ git merge v3 -m "v3 -->master"
+$ git push origin master
+
+$ git log --oneline
+
+$ git reset --soft 19ee933
+
+$ git status
+$ git reset 19ee933
+
+$ git status
+$ git reset --hard 19ee933
+$ git status
+
+
+
+
+
+
+2
+----------------
+
+# Use OpenJDK base image
+FROM openjdk:17
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy Java source file
+COPY Hello.java .
+
+# Compile Java program
+RUN javac Hello.java
+
+# Run the compiled program
+CMD ["java", "Hello"]
+
+
+
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello from Docker!");
+    }
+}
+
+# Build Docker image
+docker build -t img.
+
+# Run container
+docker run --name con1 img
+
+---------------------------------
+FROM python:3.9
+WORKDIR /app
+COPY app.py .
+CMD ["python", "app.py"]
+
+print("Hello from Python in Docker!")
+
+# Build Docker image
+docker build -t img.
+
+# Run container
+docker run --name con2 img
+
+
+----------------------
+FROM httpd:latest
+COPY index.html/usr/local/appache2/htdocs/
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello from Docker</title>
+  </head>
+  <body>
+    <h1>Hello from HTML in Docker!</h1>
+    <p>This page is served by a Docker container.</p>
+  </body>
+</html>
+
+
+# Build Docker image
+docker build -t img .
+
+# Run container
+docker run -d -p 8080:80 img
+start index.html
+
+
+
